@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Account - Chefz KOT</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', system-ui, sans-serif;
+            line-height: 1.47059;
+            letter-spacing: -0.022em;
+            color: #1d1d1f;
+            background-color: #fbfbfd;
+            font-size: 17px;
+            font-weight: 400;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0 22px;
+        }
+
+        .hero {
+            position: relative;
+            min-height: 20vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 50%, #c92a2a 100%);
+            overflow: hidden;
+            padding: 60px 0;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255, 107, 107, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(201, 42, 42, 0.2) 0%, transparent 50%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-12px) rotate(0.5deg); }
+            66% { transform: translateY(6px) rotate(-0.5deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            padding: 0 40px;
+        }
+
+        .hero-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            opacity: 0;
+            animation: slideUp 1.2s ease-out 0.2s forwards;
+        }
+
+        .hero-icon svg {
+            width: 40px;
+            height: 40px;
+            fill: white;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            line-height: 1.1;
+            font-weight: 700;
+            letter-spacing: -0.015em;
+            color: white;
+            margin-bottom: 16px;
+            opacity: 0;
+            animation: slideUp 1.2s ease-out 0.4s forwards;
+        }
+
+        .hero .subtitle {
+            font-size: 21px;
+            line-height: 1.25;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 12px;
+            opacity: 0;
+            animation: slideUp 1.2s ease-out 0.6s forwards;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .content {
+            max-width: 692px;
+            margin: 0 auto;
+            padding: 88px 0;
+        }
+
+        .warning-section {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border-radius: 18px;
+            padding: 32px;
+            margin: 44px 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid #ff9800;
+        }
+
+        .warning-section h2 {
+            color: #e65100;
+            font-size: 24px;
+            line-height: 1.16667;
+            font-weight: 600;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .warning-section ul {
+            margin: 16px 0;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .warning-section li {
+            font-size: 17px;
+            line-height: 1.47059;
+            color: #bf360c;
+            margin-bottom: 12px;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .warning-section li::before {
+            content: "⚠️";
+            position: absolute;
+            left: 0;
+        }
+
+        .email-section {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-radius: 18px;
+            padding: 44px 32px;
+            margin: 44px 0;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .email-section h2 {
+            color: #1b5e20;
+            font-size: 28px;
+            line-height: 1.16667;
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .email-address {
+            display: inline-block;
+            background: white;
+            padding: 16px 24px;
+            border-radius: 12px;
+            font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+            font-size: 18px;
+            color: #1b5e20;
+            font-weight: 600;
+            margin: 20px 0;
+            border: 2px solid #4caf50;
+            box-shadow: 0 2px 8px rgba(76, 175, 80, 0.2);
+        }
+
+        .email-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%);
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 17px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(27, 94, 32, 0.3);
+            margin-top: 16px;
+        }
+
+        .email-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(27, 94, 32, 0.4);
+        }
+
+        .instructions-section {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            border-radius: 18px;
+            padding: 32px;
+            margin: 44px 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .instructions-section h3 {
+            color: #4a148c;
+            font-size: 21px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .instructions-section p {
+            color: #6a1b9a;
+            margin-bottom: 12px;
+        }
+
+        .instructions-section ul {
+            margin: 16px 0;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .instructions-section li {
+            color: #6a1b9a;
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .instructions-section li::before {
+            content: "•";
+            color: #9c27b0;
+            position: absolute;
+            left: 0;
+        }
+
+        .support-section {
+            text-align: center;
+            padding: 32px;
+            margin-top: 44px;
+            color: #86868b;
+        }
+
+        .support-section a {
+            color: #2e7d32;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .support-section a:hover {
+            text-decoration: underline;
+        }
+
+        p {
+            font-size: 17px;
+            line-height: 1.47059;
+            letter-spacing: -0.022em;
+            color: #1d1d1f;
+            margin-bottom: 16px;
+        }
+
+        strong {
+            font-weight: 600;
+            color: #1d1d1f;
+        }
+
+        @media (max-width: 1068px) {
+            .container {
+                padding: 0 40px;
+            }
+            
+            .hero h1 {
+                font-size: 40px;
+            }
+        }
+
+        @media (max-width: 734px) {
+            .container {
+                padding: 0 16px;
+            }
+            
+            .hero {
+                min-height: 40vh;
+                padding: 40px 0;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+                line-height: 1.125;
+            }
+            
+            .hero .subtitle {
+                font-size: 19px;
+            }
+            
+            .hero-content {
+                padding: 0 20px;
+            }
+            
+            .content {
+                padding: 44px 0;
+            }
+            
+            .warning-section,
+            .email-section,
+            .instructions-section {
+                padding: 24px;
+                margin: 32px 0;
+            }
+            
+            .email-button {
+                padding: 14px 28px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <div class="hero-content">
+                <div class="hero-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+                    </svg>
+                </div>
+                <h1>Delete Account</h1>
+                <p class="subtitle">We're sorry to see you go</p>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="warning-section">
+                <h2>⚠️ Important Information</h2>
+                <ul>
+                    <li>Account deletion is <strong>permanent</strong> and cannot be undone</li>
+                    <li>All your restaurant data, orders, and customer information will be deleted</li>
+                    <li>Staff accounts and role assignments will be removed</li>
+                    <li>Backup data will be retained for 30 days, then permanently removed</li>
+                    <li>You will lose access to all features immediately after deletion</li>
+                </ul>
+            </div>
+
+            <div class="email-section">
+                <h2>📧 How to Delete Your Account</h2>
+                <p>To request account deletion, please send an email to:</p>
+                <div class="email-address">privacy@chefz.in</div>
+                <p>Or click the button below to compose an email:</p>
+                <a href="mailto:privacy@chefz.in?subject=Account%20Deletion%20Request%20-%20Chefz%20KOT&body=Hello%20Chefz%20KOT%20Team%2C%0A%0AI%20would%20like%20to%20request%20the%20deletion%20of%20my%20account.%0A%0AAccount%20Details%3A%0AEmail%3A%20%5BYour%20registered%20email%5D%0APhone%3A%20%5BYour%20registered%20phone%20number%5D%0ARestaurant%20Name%3A%20%5BYour%20restaurant%20name%5D%0A%0AReason%20for%20deletion%20(optional)%3A%20%0A%0AThank%20you." class="email-button">Send Deletion Request</a>
+            </div>
+
+            <div class="instructions-section">
+                <h3>📝 What to Include in Your Email</h3>
+                <ul>
+                    <li>Your registered email address</li>
+                    <li>Your registered phone number</li>
+                    <li>Restaurant name (if applicable)</li>
+                    <li>Reason for deletion (optional)</li>
+                </ul>
+                <p><strong>Processing Time:</strong> We will process your request within <strong>48 hours</strong> and send you a confirmation email once your account has been deleted.</p>
+            </div>
+
+            <div class="support-section">
+                <p>Need help or have questions? Contact us at <a href="mailto:support@chefz.in">support@chefz.in</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
