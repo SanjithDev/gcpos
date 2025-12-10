@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Chefz KOT</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', system-ui, sans-serif;
+            line-height: 1.47059;
+            letter-spacing: -0.022em;
+            color: #1d1d1f;
+            background-color: #fbfbfd;
+            font-size: 17px;
+            font-weight: 400;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0 22px;
+        }
+
+        .hero {
+            position: relative;
+            min-height: 25vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(120, 119, 198, 0.2) 0%, transparent 50%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-20px) rotate(1deg); }
+            66% { transform: translateY(10px) rotate(-1deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 40px;
+        }
+
+        .hero h1 {
+            font-size: 72px;
+            line-height: 1.05;
+            font-weight: 700;
+            letter-spacing: -0.015em;
+            margin-bottom: 24px;
+            opacity: 0;
+            animation: slideUp 1.2s ease-out 0.3s forwards;
+        }
+
+        .hero .subtitle {
+            font-size: 28px;
+            line-height: 1.25;
+            font-weight: 400;
+            
+            margin-bottom: 16px;
+            opacity: 0;
+            animation: slideUp 1.2s ease-out 0.6s forwards;
+        }
+
+        .hero .description {
+            font-size: 19px;
+            line-height: 1.42;
+            font-weight: 400;
+            
+            margin-bottom: 48px;
+            opacity: 0;
+            animation: slideUp 1.2s ease-out 0.9s forwards;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 14px;
+            font-weight: 500;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-out 1.5s forwards;
+        }
+
+        .scroll-indicator::after {
+            content: '';
+            display: block;
+            width: 1px;
+            height: 30px;
+            margin: 8px auto 0;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .header {
+            display: none;
+        }
+
+        .last-updated {
+            font-size: 14px;
+            line-height: 1.42857;
+            color: #86868b;
+            text-align: center;
+            margin-bottom: 44px;
+        }
+
+        .content {
+            max-width: 692px;
+            margin: 0 auto;
+            padding-bottom: 88px;
+        }
+
+        h2 {
+            font-size: 32px;
+            line-height: 1.125;
+            font-weight: 600;
+            letter-spacing: 0.004em;
+            color: #1d1d1f;
+            margin: 88px 0 22px;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        h3 {
+            font-size: 24px;
+            line-height: 1.16667;
+            font-weight: 600;
+            letter-spacing: 0.009em;
+            color: #1d1d1f;
+            margin: 44px 0 22px;
+        }
+
+        p {
+            font-size: 17px;
+            line-height: 1.47059;
+            letter-spacing: -0.022em;
+            color: #1d1d1f;
+            margin-bottom: 22px;
+        }
+
+        ul {
+            margin: 22px 0;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        li {
+            font-size: 17px;
+            line-height: 1.47059;
+            letter-spacing: -0.022em;
+            color: #1d1d1f;
+            margin-bottom: 11px;
+            padding-left: 22px;
+            position: relative;
+        }
+
+        li::before {
+            content: "•";
+            color: #86868b;
+            position: absolute;
+            left: 0;
+        }
+
+        strong {
+            font-weight: 600;
+            color: #1d1d1f;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+            border-radius: 18px;
+            padding: 32px;
+            margin: 44px 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .highlight-box p {
+            color: #1d1d1f;
+            margin-bottom: 16px;
+        }
+
+        .highlight-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            border-radius: 18px;
+            padding: 32px;
+            margin: 44px 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .warning-box p {
+            color: #1d1d1f;
+            margin-bottom: 16px;
+        }
+
+        .warning-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-radius: 18px;
+            padding: 44px 32px;
+            margin: 88px 0;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            margin: 0 0 22px;
+            font-size: 28px;
+        }
+
+        .contact-section p {
+            margin-bottom: 16px;
+        }
+
+        .contact-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        a {
+            color: #06c;
+            text-decoration: none;
+            font-weight: 400;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .divider {
+            height: 1px;
+            background: #d2d2d7;
+            margin: 88px 0;
+            border: none;
+        }
+
+        .acknowledgment {
+            border-radius: 18px;
+            padding: 44px 32px;
+            margin: 88px 0 0;
+            text-align: center;
+        }
+
+        .acknowledgment h2 {
+            margin: 0 0 22px;
+        }
+
+        .acknowledgment p {
+            margin-bottom: 16px;
+        }
+
+        .acknowledgment p:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 1068px) {
+            .container {
+                padding: 0 40px;
+            }
+            
+            h1 {
+                font-size: 48px;
+            }
+            
+            h2 {
+                font-size: 28px;
+            }
+            
+            h3 {
+                font-size: 21px;
+            }
+        }
+
+        @media (max-width: 734px) {
+            .container {
+                padding: 0 16px;
+            }
+            
+            .hero h1 {
+                font-size: 48px;
+                line-height: 1.1;
+            }
+            
+            .hero .subtitle {
+                font-size: 21px;
+            }
+            
+            .hero .description {
+                font-size: 17px;
+            }
+            
+            .hero-content {
+                padding: 0 20px;
+            }
+            
+            .content {
+                padding-bottom: 44px;
+            }
+            
+            h2 {
+                font-size: 24px;
+                margin: 44px 0 16px;
+            }
+            
+            h3 {
+                font-size: 19px;
+                margin: 32px 0 16px;
+            }
+            
+            .highlight-box,
+            .warning-box {
+                padding: 24px;
+                margin: 32px 0;
+            }
+            
+            .contact-section,
+            .acknowledgment {
+                padding: 32px 24px;
+                margin: 44px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Terms of Service</h1>
+                <p class="subtitle">Chefz KOT</p>
+                <p class="description">Professional restaurant management made simple. Clear terms, transparent policies.</p>
+            </div>
+            <div class="scroll-indicator">Scroll to explore</div>
+        </div>
+        
+        <p class="last-updated">Last updated: December 10, 2024</p>
+        
+        <div class="content"></div>
+
+            <h2>Acceptance of Terms</h2>
+            <p>By downloading, installing, or using Chefz KOT - Waiter App and Admin App (the "App"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not use the App.</p>
+            <p>These Terms constitute a legally binding agreement between you ("User", "you", or "your") and Chefz Labs ("we", "us", or "our").</p>
+            <h2>Description of Service</h2>
+            <p>Chefz KOT is a restaurant management application designed for food service businesses. The App provides:</p>
+            <ul>
+                <li>Order management and processing</li>
+                <li>Kitchen order ticket (KOT) generation</li>
+                <li>Table and customer management</li>
+                <li>Menu and inventory management</li>
+                <li>Staff role management</li>
+                <li>Sales reporting and analytics</li>
+                <li>Cloud data synchronization</li>
+            </ul>
+            <h2>User Eligibility</h2>
+            <p>You must be at least 18 years old and legally capable of entering into binding contracts to use this App. By using the App, you represent and warrant that you meet these requirements.</p>
+            <h2>User Account and Registration</h2>
+            <h3>Account Creation</h3>
+            <p>To use the App, you must create an account. You agree to:</p>
+            <ul>
+                <li>Provide accurate, current, and complete information</li>
+                <li>Maintain and update your information to keep it accurate</li>
+                <li>Maintain the security of your account credentials</li>
+                <li>Accept responsibility for all activities under your account</li>
+                <li>Notify us immediately of any unauthorized access</li>
+            </ul>
+
+            <h3>Account Security</h3>
+            <p>You are responsible for maintaining the confidentiality of your account credentials. We are not liable for any loss or damage arising from your failure to protect your account information.</p>
+            <h2>Acceptable Use</h2>
+            <h3>Permitted Use</h3>
+            <p>You may use the App only for lawful purposes and in accordance with these Terms. You agree to use the App solely for managing your legitimate business operations.</p>
+
+            <h3>Prohibited Activities</h3>
+            <p>You agree NOT to:</p>
+            <ul>
+                <li>Use the App for any illegal or unauthorized purpose</li>
+                <li>Violate any laws, regulations, or third-party rights</li>
+                <li>Attempt to gain unauthorized access to the App or its systems</li>
+                <li>Interfere with or disrupt the App's functionality</li>
+                <li>Reverse engineer, decompile, or disassemble the App</li>
+                <li>Remove or modify any proprietary notices or labels</li>
+                <li>Use the App to transmit viruses, malware, or harmful code</li>
+                <li>Impersonate any person or entity</li>
+                <li>Collect or harvest data from other users</li>
+                <li>Use automated systems to access the App without permission</li>
+                <li>Publish false claims or defamatory statements about the App</li>
+                <li>Use the App for any illegal business activities</li>
+            </ul>
+            <h2>Intellectual Property Rights</h2>
+            <h3>Our Rights</h3>
+            <p>The App, including its design, code, features, and content, is owned by Chefz Labs and protected by copyright, trademark, and other intellectual property laws. All rights not expressly granted are reserved.</p>
+
+            <h3>Your Content</h3>
+            <p>You retain ownership of all data you input into the App (menu items, customer information, orders, etc.). By using the App, you grant us a limited license to store, process, and display your content solely for providing the Service.</p>
+
+            <h3>Feedback</h3>
+            <p>If you provide feedback, suggestions, or ideas about the App, you grant us the right to use such feedback without compensation or attribution.</p>
+            <h2>Data and Privacy</h2>
+            <p>Your use of the App is also governed by our <a href="privacy_policy_chefz_kot.html">Privacy Policy</a>, which is incorporated into these Terms by reference. Please review our Privacy Policy to understand our data practices.</p>
+            <div class="highlight-box">
+                <p><strong>Key Points</strong></p>
+                <ul>
+                    <li>Your business data is stored securely in the cloud</li>
+                    <li>We do not sell or share your data with third parties for advertising</li>
+                    <li>You can export or delete your data at any time</li>
+                    <li>Data is encrypted in transit and at rest</li>
+                </ul>
+            </div>
+            <h2>Payment and Subscription</h2>
+            <h3>Service Pricing</h3>
+            <p>The App may be provided free of charge or under a subscription model. Current pricing and subscription terms will be clearly displayed in the App.</p>
+
+            <h3>Pricing Changes</h3>
+            <p>We reserve the right to modify pricing with advance notice. Existing subscribers will be notified at least 30 days in advance of any pricing changes.</p>
+
+            <h3>Refund Policy</h3>
+            <p>All payments are final and non-refundable except as required by applicable law. Refunds, if any, are provided at our sole discretion and may be subject to processing fees and terms.</p>
+            <h2>Third-Party Services</h2>
+            <p>The App may integrate with third-party services for enhanced functionality. Your use of these third-party services is subject to their respective terms and conditions. We are not responsible for the practices or content of third-party services.</p>
+            <h2>Disclaimers and Warranties</h2>
+            <div class="warning-box">
+                <h3>"AS IS" Basis</h3>
+                <p><strong>THE APP IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED.</strong></p>
+            </div>
+
+            <h3>No Warranty</h3>
+            <p>We disclaim all warranties, including but not limited to:</p>
+            <ul>
+                <li>Merchantability and fitness for a particular purpose</li>
+                <li>Non-infringement of third-party rights</li>
+                <li>Uninterrupted, secure, or error-free operation</li>
+                <li>Accuracy, reliability, or completeness of content</li>
+                <li>Correction of defects or errors</li>
+            </ul>
+
+            <h3>Your Responsibility</h3>
+            <p>You are solely responsible for:</p>
+            <ul>
+                <li>Verifying the accuracy of data entered into the App</li>
+                <li>Maintaining backups of your business data</li>
+                <li>Compliance with applicable laws and regulations</li>
+                <li>Your business operations and decisions</li>
+                <li>Configuration of menu, pricing, taxes, stock, and tables</li>
+                <li>All staff activity within the app</li>
+                <li>Securing your devices and maintaining account security</li>
+                <li>Correct order entries, pricing accuracy, and operational procedures</li>
+                <li>Tax compliance, GST calculations, and financial reporting accuracy</li>
+                <li>Compliance with all food safety, billing, and restaurant regulations</li>
+                <li>Verification of all reports, analytics, and calculations before business use</li>
+            </ul>
+            <h2>Limitation of Liability</h2>
+            <div class="warning-box">
+                <p><strong>TO THE MAXIMUM EXTENT PERMITTED BY LAW, CHEFZ LABS SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF PROFITS, DATA, USE, OR GOODWILL.</strong></p>
+            </div>
+            <p>Our total liability for any claims arising from your use of the App shall not exceed the amount you paid us in the 12 months preceding the claim for the specific paid account affected, and shall not extend to multiple premises or locations.</p>
+
+            <h3>Service Availability and Downtime</h3>
+            <p>You acknowledge that:</p>
+            <ul>
+                <li>Cloud services may experience downtime, maintenance, or interruptions</li>
+                <li>We are not responsible for third-party outages or failures</li>
+                <li>Service availability during peak business hours is not guaranteed</li>
+                <li>We shall not be liable for any losses arising from service downtime or unavailability</li>
+            </ul>
+
+            <h3>Operational Limitations</h3>
+            <p>Chefz Labs is not responsible for losses arising from:</p>
+            <ul>
+                <li>Incorrect order entries, pricing errors, or operational mistakes</li>
+                <li>Staff misuse or unauthorized access to the App</li>
+                <li>Hardware device failures or malfunctions</li>
+                <li>Third-party service failures or integrations</li>
+                <li>Network connectivity issues or internet outages</li>
+                <li>Loss of business, revenue, or customer dissatisfaction</li>
+                <li>Operational downtime, including inability to generate bills or orders</li>
+                <li>Errors arising from data import, export, or migration</li>
+            </ul>
+
+            <h3>Financial and Tax Compliance</h3>
+            <p>Chefz Labs is not responsible for:</p>
+            <ul>
+                <li>Tax calculations, financial reporting errors, or GST non-compliance</li>
+                <li>Any penalties arising from tax or regulatory non-compliance</li>
+                <li>Accuracy of reports, analytics, inventory calculations, or sales summaries</li>
+                <li>Financial losses due to calculation errors or data inaccuracies</li>
+            </ul>
+
+            <h3>Regulatory Compliance</h3>
+            <p>You are solely responsible for compliance with all applicable regulations including:</p>
+            <ul>
+                <li>Food safety regulations and FSSAI compliance</li>
+                <li>GST, billing, and financial reporting requirements</li>
+                <li>Labor laws and employment regulations</li>
+                <li>Local licensing and permit requirements</li>
+                <li>Restaurant and hospitality industry regulations</li>
+            </ul>
+
+            <h3>Data Security and Account Protection</h3>
+            <p>You are responsible for:</p>
+            <ul>
+                <li>Securing your account credentials and devices</li>
+                <li>Protecting exported data and local storage</li>
+                <li>Preventing unauthorized access to your systems</li>
+                <li>Any data exposure caused by user negligence</li>
+            </ul>
+            <p>Chefz Labs is not liable for security breaches resulting from user negligence or inadequate security practices.</p>
+
+            <h3>Service Level and Compatibility</h3>
+            <p>Chefz Labs provides software only and does not provide operational, managerial, or accounting services. We do not guarantee:</p>
+            <ul>
+                <li>Any specific uptime or service level agreement (SLA)</li>
+                <li>Compatibility with any specific printer, POS hardware, network device, or operating system version</li>
+                <li>Continuous availability during business operations</li>
+            </ul>
+            <p>The App is NOT a substitute for manual order management or business continuity systems.</p>
+
+            <h3>Business Operations and Legal Compliance</h3>
+            <p>User represents and warrants that they operate a legally compliant business. Chefz Labs is not liable for:</p>
+            <ul>
+                <li>Illegal or unauthorized business activities</li>
+                <li>Customer data security breaches due to user negligence</li>
+                <li>Access granted to third parties by the user</li>
+            </ul>
+            <p>User is solely responsible for securing customer data collected through the App.</p>
+
+            <h3>Beta Features and Experimental Functionality</h3>
+            <p>Beta features are provided without any guarantees and may be modified, discontinued, or removed at any time without notice. Use of beta features is at your own risk.</p>
+
+            <h3>Exceptions</h3>
+            <p>Some jurisdictions do not allow the exclusion of certain warranties or limitation of liability. In such cases, our liability will be limited to the maximum extent permitted by law.</p>
+            <h2>Indemnification</h2>
+            <p>You agree to indemnify, defend, and hold harmless Chefz Labs, its officers, directors, employees, and agents from any claims, liabilities, damages, losses, costs, or expenses (including legal fees) arising from:</p>
+            <ul>
+                <li>Your use or misuse of the App</li>
+                <li>Your violation of these Terms</li>
+                <li>Your violation of any rights of another party</li>
+                <li>Your business operations or decisions made using the App</li>
+            </ul>
+            <h2>Data Backup and Loss</h2>
+            <p>While we maintain regular backups, you are responsible for maintaining your own backups of critical business data. We are not liable for any data loss, corruption, or unavailability.</p>
+            <div class="highlight-box">
+                <p><strong>Recommendation</strong></p>
+                <p>Regularly export your data and maintain offline backups of critical business information.</p>
+            </div>
+            <h2>Service Modifications and Termination</h2>
+            <h3>Modifications</h3>
+            <p>We reserve the right to:</p>
+            <ul>
+                <li>Modify, suspend, or discontinue any feature of the App</li>
+                <li>Update these Terms at any time</li>
+                <li>Change pricing or introduce new features</li>
+            </ul>
+            <p>We will provide reasonable notice of material changes when possible.</p>
+
+            <h3>Termination by Us</h3>
+            <p>We may suspend or terminate your access to the App at any time, with or without cause, including for:</p>
+            <ul>
+                <li>Violation of these Terms</li>
+                <li>Fraudulent or illegal activity</li>
+                <li>Extended periods of inactivity</li>
+                <li>Technical or security reasons</li>
+            </ul>
+
+            <h3>Termination by You</h3>
+            <p>You may stop using the App at any time. To delete your account and data, contact us at <a href="mailto:support@chefz.in">support@chefz.in</a>.</p>
+
+            <h3>Effect of Termination</h3>
+            <p>Upon termination:</p>
+            <ul>
+                <li>Your right to use the App immediately ceases</li>
+                <li>We may delete your data after 30 days (backup retention period)</li>
+                <li>Provisions that should survive termination will remain in effect</li>
+            </ul>
+            <h2>Updates and Maintenance</h2>
+            <p>We may release updates, patches, or new versions of the App. You agree to install updates to continue using the App. We may perform scheduled or emergency maintenance that temporarily affects App availability.</p>
+            
+            <h3>Service Interruptions</h3>
+            <p>You acknowledge and agree that:</p>
+            <ul>
+                <li>Maintenance windows may occur during business hours</li>
+                <li>Emergency maintenance may be performed without advance notice</li>
+                <li>Service interruptions are inherent to cloud-based applications</li>
+                <li>No compensation will be provided for downtime or service interruptions</li>
+            </ul>
+            <h2>Geographic Restrictions</h2>
+            <p>The App is designed primarily for users in India. We make no representation that the App is appropriate or available for use in other locations. If you use the App from outside India, you are responsible for compliance with local laws.</p>
+            <h2>Dispute Resolution</h2>
+            <h3>Governing Law</h3>
+            <p>These Terms shall be governed by and construed in accordance with the laws of India, without regard to conflict of law provisions.</p>
+
+            <h3>Jurisdiction</h3>
+            <p>Any disputes arising from these Terms or your use of the App shall be subject to the exclusive jurisdiction of the courts in India.</p>
+
+            <h3>Informal Resolution</h3>
+            <p>Before filing any formal claim, you agree to contact us at <a href="mailto:support@chefz.in">support@chefz.in</a> to seek informal resolution of the dispute.</p>
+            <h2>Severability</h2>
+            <p>If any provision of these Terms is found to be unenforceable or invalid, that provision shall be limited or eliminated to the minimum extent necessary, and the remaining provisions shall remain in full force and effect.</p>
+            <h2>Entire Agreement</h2>
+            <p>These Terms, together with our Privacy Policy, constitute the entire agreement between you and Chefz Labs regarding the App and supersede all prior agreements and understandings.</p>
+            <h2>Force Majeure</h2>
+            <p>Chefz Labs shall not be liable for any failure or delay in performance under these Terms which is due to circumstances beyond our reasonable control, including but not limited to:</p>
+            <ul>
+                <li>Acts of God, natural disasters, or extreme weather conditions</li>
+                <li>War, terrorism, civil unrest, or government actions</li>
+                <li>Internet outages, network failures, or telecommunications disruptions</li>
+                <li>Power outages, equipment failures, or infrastructure breakdowns</li>
+                <li>Pandemics, epidemics, or public health emergencies</li>
+                <li>Third-party service provider failures or cyber attacks</li>
+            </ul>
+            <p>In such events, our obligations under these Terms will be suspended for the duration of the force majeure event.</p>
+            <h2>Changes to Terms</h2>
+            <p>We reserve the right to modify these Terms at any time. We will notify users of material changes by:</p>
+            <ul>
+                <li>Posting the updated Terms in the App</li>
+                <li>Updating the "Last updated" date</li>
+                <li>Sending an in-app notification or email</li>
+            </ul>
+            <p>Your continued use of the App after changes constitutes acceptance of the modified Terms.</p>
+            <div class="contact-section">
+                <h2>Contact Information</h2>
+                <p>For questions, concerns, or support regarding these Terms or the App, please contact us:</p>
+                <p><strong>Email:</strong> <a href="mailto:support@chefz.in">support@chefz.in</a></p>
+            </div>
+
+            <hr class="divider">
+
+            <div class="acknowledgment">
+                <h2>Acknowledgment</h2>
+                <p>By using Chefz KOT - Waiter App and Admin App, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.</p>
+                <p><strong>Thank you for using Chefz KOT!</strong></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
