@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Chefz KOT</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', system-ui, sans-serif;
+            line-height: 1.47059;
+            letter-spacing: -0.022em;
+            color: #1d1d1f;
+            background-color: #fbfbfd;
+            font-size: 17px;
+            font-weight: 400;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0 22px;
+        }
+
+        .hero {
+            position: relative;
+            min-height: 10vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            overflow: hidden;
+            padding: 80px 0;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 25% 75%, rgba(255, 154, 158, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 75% 25%, rgba(254, 207, 239, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+            animation: float 25s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-15px) rotate(0.5deg); }
+            66% { transform: translateY(8px) rotate(-0.5deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 40px;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            line-height: 1.1;
+            font-weight: 700;
+            letter-spacing: -0.015em;
+            color: #1d1d1f;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: slideUp 1.2s ease-out 0.3s forwards;
+        }
+
+        .hero .subtitle {
+            font-size: 24px;
+            line-height: 1.25;
+            font-weight: 400;
+            color: rgba(29, 29, 31, 0.8);
+            margin-bottom: 12px;
+            opacity: 0;
+            animation: slideUp 1.2s ease-out 0.6s forwards;
+        }
+
+        .hero .description {
+            font-size: 17px;
+            line-height: 1.42;
+            font-weight: 400;
+            color: rgba(29, 29, 31, 0.7);
+            margin-bottom: 32px;
+            opacity: 0;
+            animation: slideUp 1.2s ease-out 0.9s forwards;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(29, 29, 31, 0.6);
+            font-size: 14px;
+            font-weight: 500;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-out 1.5s forwards;
+        }
+
+        .scroll-indicator::after {
+            content: '';
+            display: block;
+            width: 1px;
+            height: 30px;
+            background: rgba(29, 29, 31, 0.4);
+            margin: 8px auto 0;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .header {
+            display: none;
+        }
+
+        .last-updated {
+            font-size: 14px;
+            line-height: 1.42857;
+            color: #86868b;
+            text-align: center;
+            margin-bottom: 44px;
+        }
+
+        .content {
+            max-width: 692px;
+            margin: 0 auto;
+            padding-bottom: 88px;
+        }
+
+        h2 {
+            font-size: 32px;
+            line-height: 1.125;
+            font-weight: 600;
+            letter-spacing: 0.004em;
+            color: #1d1d1f;
+            margin: 88px 0 22px;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        h3 {
+            font-size: 24px;
+            line-height: 1.16667;
+            font-weight: 600;
+            letter-spacing: 0.009em;
+            color: #1d1d1f;
+            margin: 44px 0 22px;
+        }
+
+        h4 {
+            font-size: 19px;
+            line-height: 1.21053;
+            font-weight: 600;
+            letter-spacing: 0.012em;
+            color: #1d1d1f;
+            margin: 32px 0 16px;
+        }
+
+        p {
+            font-size: 17px;
+            line-height: 1.47059;
+            letter-spacing: -0.022em;
+            color: #1d1d1f;
+            margin-bottom: 22px;
+        }
+
+        ul {
+            margin: 22px 0;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        li {
+            font-size: 17px;
+            line-height: 1.47059;
+            letter-spacing: -0.022em;
+            color: #1d1d1f;
+            margin-bottom: 11px;
+            padding-left: 22px;
+            position: relative;
+        }
+
+        li::before {
+            content: "•";
+            color: #86868b;
+            position: absolute;
+            left: 0;
+        }
+
+        strong {
+            font-weight: 600;
+            color: #1d1d1f;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-radius: 18px;
+            padding: 32px;
+            margin: 44px 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .highlight-box p {
+            color: #1d1d1f;
+            margin-bottom: 16px;
+        }
+
+        .highlight-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+            border-radius: 18px;
+            padding: 44px 32px;
+            margin: 88px 0;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            margin: 0 0 22px;
+            font-size: 28px;
+        }
+
+        .contact-section p {
+            margin-bottom: 16px;
+        }
+
+        .contact-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .data-safety {
+          
+            border-radius: 18px;
+            padding: 44px 32px;
+            margin: 88px 0 0;
+            
+        }
+
+        .data-safety h2 {
+            
+            margin: 0 0 22px;
+        }
+
+        .data-safety h3 {
+            
+            margin: 32px 0 16px;
+        }
+
+        .data-safety p {
+            
+            margin-bottom: 16px;
+        }
+
+        .data-safety ul {
+            margin: 16px 0;
+        }
+
+        
+
+        .data-safety li::before {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        a {
+            color: #06c;
+            text-decoration: none;
+            font-weight: 400;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .divider {
+            height: 1px;
+            background: #d2d2d7;
+            margin: 88px 0;
+            border: none;
+        }
+
+        .consent-section {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            border-radius: 18px;
+            padding: 44px 32px;
+            margin: 88px 0;
+            text-align: center;
+        }
+
+        .consent-section h2 {
+            margin: 0 0 22px;
+            font-size: 28px;
+        }
+
+        .consent-section p {
+            margin-bottom: 16px;
+        }
+
+        .consent-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 1068px) {
+            .container {
+                padding: 0 40px;
+            }
+            
+            h1 {
+                font-size: 48px;
+            }
+            
+            h2 {
+                font-size: 28px;
+            }
+            
+            h3 {
+                font-size: 21px;
+            }
+            
+            h4 {
+                font-size: 17px;
+            }
+        }
+
+        @media (max-width: 734px) {
+            .container {
+                padding: 0 16px;
+            }
+            
+            .hero {
+                min-height: 20vh;
+                padding: 60px 0;
+            }
+            
+            .hero h1 {
+                font-size: 40px;
+                line-height: 1.1;
+            }
+            
+            .hero .subtitle {
+                font-size: 19px;
+            }
+            
+            .hero .description {
+                font-size: 16px;
+            }
+            
+            .hero-content {
+                padding: 0 20px;
+            }
+            
+            .content {
+                padding-bottom: 44px;
+            }
+            
+            h2 {
+                font-size: 24px;
+                margin: 44px 0 16px;
+            }
+            
+            h3 {
+                font-size: 19px;
+                margin: 32px 0 16px;
+            }
+            
+            h4 {
+                font-size: 17px;
+                margin: 24px 0 12px;
+            }
+            
+            .highlight-box {
+                padding: 24px;
+                margin: 32px 0;
+            }
+            
+            .contact-section,
+            .data-safety,
+            .consent-section {
+                padding: 32px 24px;
+                margin: 44px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Privacy Policy</h1>
+                <p class="subtitle">Chefz KOT</p>
+                <p class="description">Your data, your control. Transparent privacy practices for modern restaurants.</p>
+            </div>
+            <div class="scroll-indicator">Scroll to explore</div>
+        </div>
+        
+        <p class="last-updated">Last updated: December 10, 2024</p>
+        
+        <div class="content">
+            <h2>Introduction</h2>
+            <p>Chefz Labs ("we", "our", or "us") operates the Chefz KOT - Waiter App and Admin App mobile applications (the "Service"). This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service.</p>
+            <h2>Information Collection and Use</h2>
+            
+            <h3>Personal Information</h3>
+            <p>We collect the following types of information:</p>
+
+            <h4>Location Data</h4>
+            <ul>
+                <li><strong>Purpose:</strong> Security and access control</li>
+                <li><strong>Usage:</strong> Verify authorized usage locations</li>
+                <li><strong>Permission:</strong> Location access</li>
+            </ul>
+
+            <h4>Device Information</h4>
+            <ul>
+                <li><strong>Purpose:</strong> App functionality and security</li>
+                <li><strong>Usage:</strong> Device identification and session management</li>
+                <li><strong>Permission:</strong> Device state access</li>
+            </ul>
+
+            <h4>Business Data</h4>
+            <p>We collect and store:</p>
+            <ul>
+                <li>Menu and pricing information</li>
+                <li>Order and transaction data</li>
+                <li>User accounts and preferences</li>
+                <li>Business settings and configurations</li>
+            </ul>
+
+            <h3>Automatically Collected Information</h3>
+            <ul>
+                <li>App usage analytics</li>
+                <li>Error reports and performance data</li>
+                <li>Network connectivity status</li>
+            </ul>
+            <h2>How We Use Your Information</h2>
+            <p>We use the collected data for:</p>
+            <ul>
+                <li>Providing and maintaining the Service</li>
+                <li>Managing restaurant operations</li>
+                <li>Processing orders and transactions</li>
+                <li>User authentication and access control</li>
+                <li>Generating business reports</li>
+                <li>Improving app performance</li>
+                <li>Customer support and troubleshooting</li>
+            </ul>
+            <h2>Data Storage and Security</h2>
+            <ul>
+                <li><strong>Cloud Storage:</strong> Data is stored securely in the cloud</li>
+                <li><strong>Encryption:</strong> All data is encrypted in transit and at rest</li>
+                <li><strong>Access Control:</strong> Secure user authentication and permissions</li>
+                <li><strong>Backup:</strong> Regular backups for data recovery</li>
+                <li><strong>Security Measures:</strong> Industry-standard security practices</li>
+            </ul>
+            <h2>Data Sharing</h2>
+            <div class="highlight-box">
+                <p><strong>We do NOT sell, trade, or rent your restaurant data to third parties.</strong></p>
+            </div>
+            <p>We may share data with:</p>
+            <ul>
+                <li><strong>Service Providers:</strong> For hosting and backend services</li>
+                <li><strong>Third-party Services:</strong> Only when necessary for app functionality</li>
+            </ul>
+            <h2>Your Rights</h2>
+            <p>You have the right to:</p>
+            <ul>
+                <li>Access your personal data</li>
+                <li>Correct inaccurate information</li>
+                <li>Delete your account and data</li>
+                <li>Export your data</li>
+                <li>Manage app permissions</li>
+                <li>Opt-out of data collection</li>
+            </ul>
+            <p>To exercise these rights, contact us at: <strong><a href="mailto:privacy@chefz.in">privacy@chefz.in</a></strong></p>
+            <h2>Data Retention</h2>
+            <ul>
+                <li>Business data is retained as long as you use the Service</li>
+                <li>You can delete your account and data at any time</li>
+                <li>Backup data is retained for 30 days after deletion</li>
+            </ul>
+            <h2>Children's Privacy</h2>
+            <p>Our Service is designed for restaurant business operations and is not intended for children under 13. We do not knowingly collect personal information from children under 13.</p>
+            <h2>Permissions</h2>
+            
+            <h3>Required Permissions:</h3>
+            <ul>
+                <li><strong>Internet Access:</strong> Sync data and provide core functionality</li>
+                <li><strong>Network State:</strong> Monitor connectivity status</li>
+                <li><strong>Notifications:</strong> App alerts and updates</li>
+            </ul>
+
+            <h3>Optional Permissions:</h3>
+            <ul>
+                <li><strong>Location:</strong> Security and access control (can be denied)</li>
+                <li><strong>Device State:</strong> Enhanced functionality (can be denied)</li>
+                <li><strong>Storage:</strong> Local data caching (can be denied)</li>
+            </ul>
+            <h2>Changes to This Privacy Policy</h2>
+            <p>We may update our Privacy Policy from time to time. We will notify you of any changes by:</p>
+            <ul>
+                <li>Posting the new Privacy Policy in the app</li>
+                <li>Updating the "Last updated" date</li>
+                <li>Sending push notifications for significant changes</li>
+                <li>Email notification to registered admin users</li>
+            </ul>
+            <div class="contact-section">
+                <h2>Contact Us</h2>
+                <p>If you have questions about this Privacy Policy, contact us:</p>
+                <p><strong>Email:</strong> <a href="mailto:privacy@chefz.in">privacy@chefz.in</a></p>
+                <p><strong>Support:</strong> <a href="mailto:support@chefz.in">support@chefz.in</a></p>
+            </div>
+
+            <div class="consent-section">
+                <h2>Consent</h2>
+                <p>By using Chefz KOT - Waiter App and Admin App (Chefz Labs), you consent to our Privacy Policy and agree to its terms.</p>
+            </div>
+
+            <hr class="divider">
+
+            <div class="data-safety">
+            <h2>Data Safety Summary (for Play Console)</h2>
+            
+            <h3>Data Collection:</h3>
+            <ul>
+                <li>✅ Location: YES (WiFi-based security verification)</li>
+                <li>✅ Personal Info: YES (Staff names, roles, contact information)</li>
+                <li>✅ Financial Info: YES (Settlement data, cash management - not payment processing)</li>
+                <li>✅ Photos/Videos: NO</li>
+                <li>✅ Audio Files: NO</li>
+                <li>✅ Files and Docs: NO</li>
+                <li>✅ Calendar: NO</li>
+                <li>✅ Contacts: NO</li>
+                <li>✅ App Activity: YES (Restaurant operations analytics)</li>
+                <li>✅ Device ID: YES (Session management and security)</li>
+            </ul>
+
+            <h3>Data Usage:</h3>
+            <ul>
+                <li>Restaurant operations management</li>
+                <li>Performance analytics</li>
+                <li>Role-based access control</li>
+            </ul>
+
+            <h3>Data Sharing:</h3>
+            <ul>
+                <li>NO third-party sharing for advertising</li>
+                <li>NO data selling or trading</li>
+                <li>Only essential service providers.</li>
+            </ul>
+
+            <h3>Security Practices:</h3>
+            <ul>
+                <li>Data encrypted in transit using HTTPS/TLS</li>
+                <li>Data encrypted at rest in database</li>
+                <li>Location-based security verification</li>
+                <li>Users can request data deletion</li>
+                <li>Regular security audits and updates</li>
+            </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
